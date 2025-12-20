@@ -4,176 +4,151 @@
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h1;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h1;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h1);
         }
-    }
-    @else if $level == h2 {
+    } @else if $level == h2 {
         font-size: rem($font-size-h2-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h2;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h2;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h2;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h2);
         }
-    }
-    @else if $level == h3 {
+    } @else if $level == h3 {
         font-size: rem($font-size-h3-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h3;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h3;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h3;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h3);
         }
-    }
-    @else if $level == h4 {
+    } @else if $level == h4 {
         font-size: rem($font-size-h4-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h4;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h4;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h4;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h4);
         }
-    }
-    @else if $level == h5 {
+    } @else if $level == h5 {
         font-size: rem($font-size-h5-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h5;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h5;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h5;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h5);
         }
-    }
-    @else if $level == h6 {
+    } @else if $level == h6 {
         font-size: rem($font-size-h6-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h6;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h6;
         }
 
         @if $text-transform {
             text-transform: $text-transform;
-        }
-        @else {
+        } @else {
             text-transform: $font_text_transform_h6;
         }
 
         @media (min-width: $screen-md) {
             font-size: rem($font-size-h6);
         }
-    }
-    @else {
+    } @else {
         font-size: rem($font-size-h2-min);
 
         @if $weight {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             font-weight: $font-weight-h2;
         }
 
         @if $line-height {
             font-weight: $weight;
-        }
-        @else {
+        } @else {
             line-height: $font_line_height_h2;
         }
 

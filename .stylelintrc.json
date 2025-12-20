@@ -1,0 +1,20 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-max-id": 0,
+    "selector-class-pattern": null,
+    "scss/at-import-partial-extension": null,
+    "scss/dollar-variable-pattern": null,
+    "scss/at-mixin-pattern": null,
+    "scss/comment-no-empty": null,
+    "scss/no-global-function-names": null,
+    "scss/operator-no-unspaced": null,
+    "scss/operator-no-newline-after": null,
+    "scss/at-if-no-null": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "no-invalid-position-at-import-rule": null,
+    "no-empty-source": null,
+    "font-family-no-missing-generic-family-keyword": null
+  }
+}

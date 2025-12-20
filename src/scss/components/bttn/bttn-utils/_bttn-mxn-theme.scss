@@ -1,8 +1,6 @@
 @mixin bttn-theme($theme: null) {
-
     // Check for theme and set args to those values
     @if $theme and map-get($map-bttn-themes, $theme) {
-
 		$map: map-get($map-bttn-themes, $theme);
         $bg-color: map-get($map, bg-color);
         $bg-color-active: map-get($map, bg-color-active);
@@ -20,8 +18,7 @@
         .icon {
             @if $icon-fill { // if specified
                 fill: $icon-fill;
-            }
-            @else { // else same as font color
+            } @else { // else same as font color
                 fill: $font-color;
             }
         }
@@ -40,14 +37,12 @@
             .icon {
                 @if $icon-fill { // if specified
                     fill: $icon-fill-active;
-                }
-                @else { // else same as font color active
+                } @else { // else same as font color active
                     fill: $font-color-active;
                 }
             }
         }
-    }
-    @else {
+    } @else {
         @error "Sorry, but `#{$theme}` is not a valid value for $theme.";
     }
 }

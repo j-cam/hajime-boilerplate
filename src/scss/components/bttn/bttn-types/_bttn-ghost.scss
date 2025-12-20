@@ -22,6 +22,7 @@
      ) {
         // Initialize the $map variable so it can be set dynamically
         $map: null;
+
         // Check for theme and set args to those values
         @if $theme {
             $map: map-get($map-bttn-ghost-themes, $theme);
@@ -33,10 +34,10 @@
         $icon-fill: map-get($map, icon-fill);
 
         // include shared styles of non ghost button
-        @include bttn-base();
+        @include bttn-base;
 
         // include button transition properties
-        @include bttn-hover-transition();
+        @include bttn-hover-transition;
 
         // xl or sm is passed through when this is called from an alias
         @include bttn-size($size, $font-size);
@@ -44,8 +45,7 @@
         @if $block {
             display: block;
             width: 100%;
-        }
-        @else {
+        } @else {
             display: inline-block;
         }
 

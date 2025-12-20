@@ -1,4 +1,4 @@
-/*============================================================================
+/* ============================================================================
   Table of Contents
 
     1. Content Sizing
@@ -7,13 +7,13 @@
     4. Colors
     5. Module & Component Specific
 
-==============================================================================*/
+============================================================================== */
 
 $debug_breakpoints: true;
 
-/*============================================================================
+/* ============================================================================
   1. Content Sizing
-==============================================================================*/
+============================================================================== */
 
 
 /**
@@ -27,53 +27,45 @@ $design_width: $design_canvas_width;
 $site_max_width: $design_width; // width of design file canvas
 
 
-//--  Breakpoints
+// --  Breakpoints
 
 $bp_desktop_xlarge: 1300px;
-$bp_desktop_large:  1050px;
+$bp_desktop_large: 1050px;
 $bp_desktop_medium: 980px;
-$bp_desktop_small:  900px;
+$bp_desktop_small: 900px;
 $bp_desktop_xsmall: 800px;
-
-$bp_desktop:        769px;
-$bp_tablet:         768px;
-$bp_below_tablet:   $bp_tablet - 1px;
-
-$bp_mobile_xlarge:  650px;
-$bp_mobile_large:   600px; // Buttons go 100%;
-$bp_mobile_medium:  550px;
-$bp_mobile_small:   414px;// iPhone 6plus
-$bp_mobile_xsmall:  375px;// iPhone 6
-$bp_mobile_tiny:    320px;// iPhone 5
+$bp_desktop: 769px;
+$bp_tablet: 768px;
+$bp_below_tablet: $bp_tablet - 1px;
+$bp_mobile_xlarge: 650px;
+$bp_mobile_large: 600px; // Buttons go 100%;
+$bp_mobile_medium: 550px;
+$bp_mobile_small: 414px;// iPhone 6plus
+$bp_mobile_xsmall: 375px;// iPhone 6
+$bp_mobile_tiny: 320px;// iPhone 5
 
 
-//--  Gutters
+// --  Gutters
 
 $gutter: 55px;
 $gutter_percent: percentage($gutter / $site_max_width);
-
 $gutter_half: ($gutter / 2 );
 $gutter_split_percent: percentage($gutter_half / $site_max_width );
-
 $gutter_tablet: $gutter / 2;
 $gutter_tablet_percent: percentage($gutter_tablet / $bp_tablet );
-
 $headings-margin-bottom: 1rem;
 $paragraph-margin-bottom: 1rem;
-
 $standard_block_side_spacing: 1rem;
 $standard_block_bottom_spacing: 1rem;
+$border-width: 1px !default;
+$border-color: #eee !default;
 
-$border-width:                1px !default;
-$border-color:                #eee !default;
-
-/*============================================================================
+/* ============================================================================
   2. Directory Paths & Z-Indexes
-==============================================================================*/
+============================================================================== */
 
-//---- Images
+// ---- Images
 $images_directory: '/assets/';
-
 
 $spritesmith_ImgName: 'sprite.png';
 $spritesmith_retinaImgName: 'sprite@2x.png';
@@ -90,142 +82,122 @@ $z_indexes: (
 
 
 
-/*============================================================================
+/* ============================================================================
   3. Typography
-==============================================================================*/
+============================================================================== */
 
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * .875) !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
 
-$font-weight-light:           300 !default;
-$font-weight-normal:          400 !default;
-$font-weight-bold:            700 !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+$dt-font-weight: $font-weight-bold !default;
 
-$font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.5 !default;
-
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
-
-
-$headings-font-family:        inherit !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
-$headings-color:              inherit !default;
-
-$dt-font-weight:              $font-weight-bold !default;
-
-//---- Font Sizes
+// ---- Font Sizes
 
 $font_size_base: 16px;
 $font_size_base_min: 12px;
-
 $line_height_base: 1.4;
-
-$font_size_h1:      32px;
-$font_size_h1_min:  24px;
-
-$font_size_h2:      26px;
-$font_size_h2_min:  20px;
-
-$font_size_h3:      20px;
-$font_size_h3_min:  16px;
-
-$font_size_h4:      16px;
-$font_size_h4_min:  12px;
-
-$font_size_h5:      12px;
-$font_size_h5_min:  12px;
-
-$font_size_h6:      12px;
-$font_size_h6_min:  12px;
+$font_size_h1: 32px;
+$font_size_h1_min: 24px;
+$font_size_h2: 26px;
+$font_size_h2_min: 20px;
+$font_size_h3: 20px;
+$font_size_h3_min: 16px;
+$font_size_h4: 16px;
+$font_size_h4_min: 12px;
+$font_size_h5: 12px;
+$font_size_h5_min: 12px;
+$font_size_h6: 12px;
+$font_size_h6_min: 12px;
 
 
 
-/*============================================================================
+/* ============================================================================
   4. Colors
-==============================================================================*/
+============================================================================== */
 // Body
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #fff !default;
-$body-color:                #545454 !default;
+$body-bg: #fff !default;
+$body-color: #545454 !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                #3d3e46 !default;
-$link-decoration:           none !default;
-$link-hover-color:          darken($link-color, 15%) !default;
-$link-hover-decoration:     underline !default;
+$link-color: #3d3e46 !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
 
 // Paragraphs
 //
 // Style p element.
 
-$paragraph-margin-bottom:   1rem !default;
+$paragraph-margin-bottom: 1rem !default;
 /* Selections */
 $color_selection: #b3d4fc;
-$background_color_selection:  #eee;
-
-$color-border:  #eee;
+$background_color_selection: #eee;
+$color-border: #eee;
 
 
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
-$table-caption-side:           top;
-$table-cell-padding:          .75rem !default;
-$table-cell-padding-sm:       .3rem !default;
-
-$table-bg:                    transparent !default;
-
-$table-border-width:          $border-width !default;
-$table-border-color:          #545454 !default;
-
-$table-head-bg:               #545454 !default;
-$table-head-color:            #fff !default;
+$table-caption-side: top;
+$table-cell-padding: .75rem !default;
+$table-cell-padding-sm: .3rem !default;
+$table-bg: transparent !default;
+$table-border-width: $border-width !default;
+$table-border-color: #545454 !default;
+$table-head-bg: #545454 !default;
+$table-head-color: #fff !default;
 
 
+$table-striped-order: odd !default;
 
-$table-striped-order:         odd !default;
 
+// ---- Button Defaults
 
-//---- Button Defaults
-
-$button_color:                  #fff;
-$button_color_hover:            #fff;
-$button_color_disabled:         darken(#eee, 25%);
-$button_padding:                14px 20px;
-$button_font_size:              20px;
-$button_font_family:            $font-family-sans-serif;
-$button_font_weight:            $font-weight-bold;
-$button_line_height:            1.42;
-
-$button_background_color:       #2c2c35;
+$button_color: #fff;
+$button_color_hover: #fff;
+$button_color_disabled: darken(#eee, 25%);
+$button_padding: 14px 20px;
+$button_font_size: 20px;
+$button_font_family: $font-family-sans-serif;
+$button_font_weight: $font-weight-bold;
+$button_line_height: 1.42;
+$button_background_color: #2c2c35;
 $button_background_color_hover: #2c2c35;
 $button_background_color_disabled: #eee;
-
 $button_background_color_secondary: #949497;
 $button_background_color_secondary_hover: #949497;
-
 $button_background_color_alt: #5e5e5e;
 $button_background_color_alt_hover: #5e5e5e;
 

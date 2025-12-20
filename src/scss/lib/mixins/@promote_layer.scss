@@ -3,6 +3,6 @@
 // ==============================================================================*/
 
 @mixin promote-layer($properties: transform) {
-    -webkit-transform: translateZ(0); // translateZ hack
+    transform: translateZ(0); // translateZ hack
     will-change: $properties; // spec
 }

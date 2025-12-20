@@ -20,12 +20,14 @@
     ) {
         // Initialize the $map variable so it can be set dynamically
         $map: null;
+
         // Check for theme and set args to those values
         @if $theme {
             $map: map-get($map-bttn-pill-themes, $theme);
         } @else {
             $map: $bttn-pill-theme-defaults;
         }
+
         // Map the values
         $bg-color: map-get($map, bg-color);
         $bg-color-active: map-get($map, bg-color-active);
@@ -37,10 +39,10 @@
         $icon-fill-active: map-get($map, icon-fill-active);
 
         // include shared styles
-        @include bttn-base();
+        @include bttn-base;
 
         // include button transition properties
-        @include bttn-hover-transition();
+        @include bttn-hover-transition;
 
         padding: 4px 12px;
         border-radius: 500px;
@@ -56,13 +58,12 @@
         appearance: none; // just in case it's a button or input
 
         // include button transition properties
-        @include bttn-hover-transition();
+        @include bttn-hover-transition;
 
         .icon {
             @if $icon-fill { // if specified
                 fill: $icon-fill;
-            }
-            @else { // else same as font color
+            } @else { // else same as font color
                 fill: $font-color;
             }
         }
@@ -83,13 +84,13 @@
             .icon {
                 @if $icon-fill { // if specified
                     fill: $icon-fill-active;
-                }
-                @else { // else same as font color active
+                } @else { // else same as font color active
                     fill: $font-color-active;
                 }
             }
 
         }
+
         // Disabled State
         //
         // The disabled state uses the class .disabled, is-disabled,

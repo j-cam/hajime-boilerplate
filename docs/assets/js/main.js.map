@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/js/main.js"],
+  "sourcesContent": ["// Main JavaScript entry pointimport { initConsole } from './modules/console.js';\n\n// Add your application code here\n\n// Initialize console shim\n\nconsole.log('Hajime boilerplate loaded');initConsole();\n\n\n// Your application code here\n\n"],
+  "mappings": "MAMA,QAAQ,IAAI,2BAA2B,EAAE,YAAY",
+  "names": []
+}

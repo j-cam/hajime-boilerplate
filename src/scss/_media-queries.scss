@@ -6,30 +6,29 @@
 
 
 // Declarations
-$desktop_xlarge:  'max-width: #{$bp_desktop_xlarge}';
-$desktop_large:   'max-width: #{$bp_desktop_large}'; // Buttons go 100%;
+$desktop_xlarge: 'max-width: #{$bp_desktop_xlarge}';
+$desktop_large: 'max-width: #{$bp_desktop_large}'; // Buttons go 100%;
 
-$desktop_medium:  'max-width: #{$bp_desktop_medium}';
-$desktop_small:   'max-width: #{$bp_desktop_small}';
-$desktop_xsmall:  'max-width: #{$bp_desktop_xsmall}';
-$desktop:         'max-width: #{$bp_desktop}';
-$tablet:          'max-width: #{$bp_tablet}';
-$below_tablet:    'max-width: #{$bp_below_tablet}';
-
-$mobile_xlarge:   'max-width: #{$bp_mobile_xlarge}';
-$mobile_large:    'max-width: #{$bp_mobile_large}';
-$mobile_medium:   'max-width: #{$bp_mobile_medium}';
-$mobile_small:    'max-width: #{$bp_mobile_small}';
-$mobile_xsmall:   'max-width: #{$bp_mobile_xsmall}';
-$mobile_tiny:     'max-width: #{$bp_mobile_tiny}';
+$desktop_medium: 'max-width: #{$bp_desktop_medium}';
+$desktop_small: 'max-width: #{$bp_desktop_small}';
+$desktop_xsmall: 'max-width: #{$bp_desktop_xsmall}';
+$desktop: 'max-width: #{$bp_desktop}';
+$tablet: 'max-width: #{$bp_tablet}';
+$below_tablet: 'max-width: #{$bp_below_tablet}';
+$mobile_xlarge: 'max-width: #{$bp_mobile_xlarge}';
+$mobile_large: 'max-width: #{$bp_mobile_large}';
+$mobile_medium: 'max-width: #{$bp_mobile_medium}';
+$mobile_small: 'max-width: #{$bp_mobile_small}';
+$mobile_xsmall: 'max-width: #{$bp_mobile_xsmall}';
+$mobile_tiny: 'max-width: #{$bp_mobile_tiny}';
 
 // Used for collection grids
-$desktop_large_min:   'min-width: #{$bp_desktop_large + 1px}';
-$desktop_medium_min:  'min-width: #{$bp_desktop_medium + 1px}';
-$desktop_small_min:   'min-width: #{$bp_desktop_small + 1px}';
-$desktop_xsmall_min:  'min-width: #{$bp_desktop_xsmall + 1px}';
-$desktop_min:         'min-width: #{$bp_desktop}';
-$tablet_min:         'min-width: #{$bp_tablet}';
+$desktop_large_min: 'min-width: #{$bp_desktop_large + 1px}';
+$desktop_medium_min: 'min-width: #{$bp_desktop_medium + 1px}';
+$desktop_small_min: 'min-width: #{$bp_desktop_small + 1px}';
+$desktop_xsmall_min: 'min-width: #{$bp_desktop_xsmall + 1px}';
+$desktop_min: 'min-width: #{$bp_desktop}';
+$tablet_min: 'min-width: #{$bp_tablet}';
 
 // ============================================================================
 // #Breakpoint and Grid Variables
@@ -42,7 +41,6 @@ $breakpoints: (
   'desktop' '(min-width: #{$bp_desktop})'
 );
 $breakpoint-has-widths: ( 'tablet-down', 'desktop');
-
 
 $class-type: unquote(".");
 
@@ -76,51 +74,46 @@ $class-type: unquote(".");
 }
 
 // ================ Our regular, non-responsive width and helper classes =======
-@include device-helper();
+@include device-helper;
 
 // ================ Our responsive classes, if we have enabled them ============
 
 @each $name in $breakpoint-has-widths {
   @include grid-media-query($name) {
-
     @include device-helper('#{$name}--');
 
   }
 }
 
 
-/*============================================================================
+/* ============================================================================
   Dependency-free breakpoint mixin
     - Based on http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
     - Usage docs: http://shopify.github.io/Timber/#sass-mixins
-==============================================================================*/
+============================================================================== */
 $min: min-width;
 $max: max-width;
 
-@mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
+@mixin at-query($constraint_, $viewport1_, $viewport2_:null) {
  $constraint: $constraint_;
  $viewport1: $viewport1_;
  $viewport2: $viewport2_;
 
   @if type-of($constraint_) == number {
-    $viewport1 : $constraint_;
-    $viewport2 : $viewport1_;
-    $constraint : null;
+    $viewport1: $constraint_;
+    $viewport2: $viewport1_;
+    $constraint: null;
   }
 
   @if $constraint == $min {
     @media screen and ($min: $viewport1) {
       @content;
     }
-  }
-
-  @else if $constraint == $max {
+  } @else if $constraint == $max {
     @media screen and ($max: $viewport1) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @media screen and ($min: $viewport1) and ($max: $viewport2) {
       @content;
     }
@@ -130,22 +123,21 @@ $max: max-width;
 
 
 @mixin breakpoint_debugger() {
-
   body {
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       position: fixed;
       height: 1.5em;
       line-height: 1.5em;
       font-size: 0.8em;
       top: 0;
       display: block;
-      margin: 0 0;
+      margin: 0;
       text-align: center;
     }
   }
 
-  body:before {
+  body::before {
     z-index: 400;
     width: auto;
     padding: 0 4px;
@@ -155,55 +147,67 @@ $max: max-width;
     content: attr(data-before);
   }
 
-  body:after {
+  body::after {
       z-index: 300;
       width: 100%;
       left: 0;
       right: 0;
       background-color: rgba(#000,0.7);
       color: #fff;
-
       content: "greater than #{$bp_desktop_xlarge} ";
 
       @media ($desktop_xlarge) {
           content: "at or below #{$bp_desktop_xlarge} (desktop_xlarge)";
       }
+
       @media ($desktop_large) {
           content: "at or below #{$bp_desktop_large} (desktop_large)";
       }
+
       @media ($desktop_medium) {
           content: "at or below #{$bp_desktop_medium} (desktop_medium)";
       }
+
       @media ($desktop_small) {
           content: "at or below #{$bp_desktop_small} (desktop_small)";
       }
+
       @media ($desktop_xsmall) {
           content: "at or below #{$bp_desktop_xsmall} (desktop_xsmall)";
       }
+
       @media ($desktop) {
           content: "at or below #{$bp_desktop} (desktop)";
       }
+
       @media ($tablet) {
           content: "at or below #{$bp_tablet} (tablet)";
       }
+
       @media ($below_tablet) {
           content: "at or below #{$bp_below_tablet} (below_tablet)";
       }
+
       @media ($mobile_xlarge) {
           content: "at or below #{$bp_mobile_xlarge} (mobile_xlarge)";
       }
+
       @media ($mobile_large) {
           content: "at or below #{$bp_mobile_large} (mobile_large)";
       }
+
       @media ($mobile_medium) {
           content: "at or below #{$bp_mobile_medium} (mobile_medium)";
       }
+
       @media ($mobile_small) {
           content: "at or below #{$bp_mobile_small} (mobile_small)";
       }
+
       @media ($mobile_xsmall) {
           content: "at or below #{$bp_mobile_xsmall} (mobile_xsmall)";
       }
+
       @media ($mobile_tiny) {
           content: "at or below #{$bp_mobile_tiny} (mobile_tiny)";
       }

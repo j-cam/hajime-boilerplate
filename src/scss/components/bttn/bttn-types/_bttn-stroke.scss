@@ -22,12 +22,14 @@
     ) {
         // Initialize the $map variable so it can be set dynamically
         $map: null;
+
         // Check for theme and set args to those values
         @if $theme {
             $map: map-get($map-bttn-stroke-themes, $theme);
         } @else {
             $map: $bttn-stroke-theme-defaults;
         }
+
         // Map the values
         $bg-color: map-get($map, bg-color);
         $bg-color-active: map-get($map, bg-color-active);
@@ -39,10 +41,10 @@
         $icon-fill-active: map-get($map, icon-fill-active);
 
         // include shared styles
-        @include bttn-base();
+        @include bttn-base;
 
         // include button transition properties
-        @include bttn-hover-transition();
+        @include bttn-hover-transition;
 
         // xl or sm is passed through when this is called from an alias
         @include bttn-size($size, $font-size);
@@ -50,8 +52,7 @@
         @if $block {
             display: block;
             width: 100%;
-        }
-        @else {
+        } @else {
             display: inline-block;
         }
 
@@ -65,8 +66,7 @@
         .icon {
             @if $icon-fill {
                 fill: $icon-fill;
-            }
-            @else {
+            } @else {
                 fill: $font-color;
             }
         }
@@ -81,11 +81,11 @@
             color: $font-color-active;
             border-color: $border-color-active;
             background-color: $bg-color-active;
+
             .icon {
                 @if $icon-fill-active {
                     fill: $icon-fill-active;
-                }
-                @else {
+                } @else {
                     fill: $font-color-active;
                 }
             }
