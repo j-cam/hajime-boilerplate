@@ -1,6 +1,7 @@
 // box-shadow: offset-x offset-y blur-radius spread-radius rgba(0, 0, 0, opacity) inset;
-@mixin psd_drop_shadow( $distance: 0px, $spread: 0px, $size: 5px, $r: 0, $g: 0, $b: 0, $opacity: 0.15) {
+@mixin psd_drop_shadow( $distance: 0, $spread: 0, $size: 5px, $r: 0, $g: 0, $b: 0, $opacity: 0.15) {
     box-shadow: $distance $spread $size $spread rgba( $r, $g, $b, $opacity);
+
     // box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
 }
 

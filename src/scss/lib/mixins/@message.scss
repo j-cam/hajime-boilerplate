@@ -6,8 +6,9 @@
     font-weight: normal;
     position: relative;
     color: #666;
-    &:before {
-        font-family: 'FontAwesome';
+
+    &::before {
+        font-family: FontAwesome;
         content: $glyph;
         color: $color;
         position: absolute;

@@ -2,34 +2,39 @@
 @mixin tooltip($size: 5px, $dir: left, $bgcolor: $black) {
     background: $bgcolor;
     position: relative;
-    &:before {
+
+    &::before {
         border-style: solid;
         content: "";
         display: block;
         position: absolute;
-        @if (($dir==top) or ($dir==bottom)) {
+
+        @if ($dir==top) or ($dir==bottom) {
             border-color: $bgcolor transparent;
             left: 50%;
             margin-left: -$size;
-        }
-        @else {
+        } @else {
             border-color: transparent $bgcolor;
             margin-top: -$size;
             top: 50%;
         }
-        @if ($dir==top) {
-            border-width: 0 $size $size $size;
+
+        @if $dir==top {
+            border-width: 0 $size $size;
             top: -$size;
         }
-        @if ($dir==right) {
+
+        @if $dir==right {
             border-width: $size 0 $size $size;
             right: -$size;
         }
-        @if ($dir==bottom) {
+
+        @if $dir==bottom {
             border-width: $size $size 0 $size;
             bottom: -$size;
         }
-        @if ($dir==left) {
+
+        @if $dir==left {
             border-width: $size $size $size 0;
             left: -$size;
         }
